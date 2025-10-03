@@ -1,60 +1,69 @@
 <!DOCTYPE html>
-<html lang="hy">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Բաբկեն & Նոնա | Հարսանեկան հրավերք</title>
+  <title>Babken & Nona | Wedding Invitation</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       font-family: 'Georgia', serif;
-      background: #f9f7f6;
+      background: url('604d0595-4dca-4967-8b88-a1e839195938.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #333;
       line-height: 1.6;
     }
+
+    h1, h2 {
+      font-family: 'Great Vibes', cursive;
+      color: #8c6b48;
+    }
+
     section {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       text-align: center;
       padding: 2rem;
-    }
-    h1, h2, h3 {
-      margin: 0.5rem 0;
-    }
-    .hero {
-      background: url('604d0595-4dca-4967-8b88-a1e839195938.jpg') no-repeat center/cover;
-      color: white;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-    }
-    .hero h1 {
-      font-size: 3rem;
-    }
-    .details {
-      background: #fff;
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       max-width: 600px;
+      margin: 30px auto;
     }
+
+    img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
     a {
       color: #a67c52;
       text-decoration: none;
       font-weight: bold;
     }
+
     .footer {
       background: #a67c52;
       color: white;
       padding: 1.5rem;
-    }
-    #countdown {
       text-align: center;
+    }
+
+    #countdown {
       font-size: 1.5em;
       margin: 20px;
       color: #8c6b48;
+      text-align: center;
     }
+
     button.playPause {
       position: fixed;
       top: 10px;
@@ -99,7 +108,7 @@
       const diff = weddingDate - now;
 
       if (diff <= 0) {
-        countdown.innerHTML = "💍 Հարսանիքը սկսվել է!";
+        countdown.innerHTML = "💍 The wedding has begun!";
         clearInterval(interval);
         return;
       }
@@ -109,7 +118,7 @@
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
 
-      countdown.innerHTML = `⏳ Հեռավորություն մինչ մեր մեծ օրը: ${days} օր ${hours} ժամ ${minutes} րոպե ${seconds} վայրկյան`;
+      countdown.innerHTML = `⏳ Time until our big day: ${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
 
     updateCountdown();
@@ -117,45 +126,50 @@
   </script>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <h2>Հրավերք մեր հարսանիքին</h2>
-    <h1>Բաբկեն & Նոնա</h1>
-    <h3>02․11․2025</h3>
+  <section>
+    <h2>You're Invited to Our Wedding</h2>
+    <h1>Babken & Nona</h1>
+    <h3>02.11.2025</h3>
   </section>
 
   <!-- Church Section -->
   <section>
-    <div class="details">
-      <h2>Եկեղեցի</h2>
-      <p>Սուրբ Հռիփսիմե եկեղեցի, Էջմիածին</p>
-      <p>Ժամը 15:10</p>
-      <p><a href="https://maps.google.com/?q=St+Hripsime+Church,+Ejmiatsin" target="_blank">Դիտել քարտեզում</a></p>
-    </div>
+    <h2>Church</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/St_Hripsime_Church.jpg" alt="Saint Hripsime Church">
+    <p>Saint Hripsime Church, Ejmiatsin</p>
+    <p>Time: 15:10</p>
+    <p><a href="https://maps.google.com/?q=St+Hripsime+Church,+Ejmiatsin" target="_blank">View on map</a></p>
   </section>
 
   <!-- Reception Section -->
   <section>
-    <div class="details">
-      <h2>Տոնակատարություն</h2>
-      <p>Morena Hall, Մասիս</p>
-      <p>Ժամը 17:30</p>
-      <p><a href="https://maps.google.com/?q=Morena+Hall,+Masis" target="_blank">Դիտել քարտեզում</a></p>
-    </div>
+    <h2>Reception</h2>
+    <img src="https://images.unsplash.com/photo-1544185314-efb207234b91?auto=format&fit=crop&w=1200&q=80" alt="Wedding Hall">
+    <p>Morena Hall, Masis</p>
+    <p>Time: 17:30</p>
+    <p><a href="https://maps.google.com/?q=Morena+Hall,+Masis" target="_blank">View on map</a></p>
   </section>
 
   <!-- Invitation Section -->
   <section>
-    <div class="details">
-      <h2>Սիրով հրավիրում ենք Ձեզ և Ձեր երկրորդ կեսին 🌸</h2>
-      <p>Մեծ ուրախությամբ սպասում ենք կիսելու մեր կյանքի ամենակարևոր օրը։</p>
-    </div>
+    <h2>We invite you with love 🌸</h2>
+    <p>We look forward to sharing the most important day of our lives with you.</p>
+  </section>
+
+  <!-- Calendar Section -->
+  <section>
+    <h2>Save the Date</h2>
+    <p>
+      <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Babken+%26+Nona+Wedding&dates=20251102T151000/20251102T173000&details=Wedding+Celebration&location=Saint+Hripsime+Church+%26+Morena+Hall,+Armenia" target="_blank">
+        Add to Google Calendar 📅
+      </a>
+    </p>
   </section>
 
   <!-- Footer -->
   <section class="footer">
-    <p>Սպասում ենք Ձեզ սիրով 🤍</p>
+    <p>Looking forward to celebrating with you 🤍</p>
   </section>
 
 </body>
 </html>
-
