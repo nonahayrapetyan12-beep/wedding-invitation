@@ -1,144 +1,160 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="hy">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.1">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Բաբկեն & Նոնա | Հարսանեկան հրավերք</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #f9f7f6;
+      color: #333;
+      line-height: 1.6;
+    }
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1, h2, h3 {
+      margin: 0.5rem 0;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1529638390731-223f7f87a95d?auto=format&fit=crop&w=1200&q=80') no-repeat center/cover;
+      color: white;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .details {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 600px;
+    }
+    a {
+      color: #a67c52;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .footer {
+      background: #a67c52;
+      color: white;
+      padding: 1.5rem;
+    }
+    #countdown {
+      text-align: center;
+      font-size: 1.5em;
+      margin: 20px;
+      color: #8c6b48;
+    }
+    button.playPause {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px 15px;
+      background:#8c6b48;
+      color:white;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="hy"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1">&lt;title&gt;Բաբկեն &amp; Նոնա | Հարսանեկան հրավերք&lt;/title&gt;</p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1">body {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-family: 'Georgia', serif;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: #f9f7f6;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: #333;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>line-height: 1.6;</p>
-<p class="p1">}</p>
-<p class="p1">section {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding: 2rem;</p>
-<p class="p1">}</p>
-<p class="p1">h1, h2, h3 {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin: 0.5rem 0;</p>
-<p class="p1">}</p>
-<p class="p1">.hero {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: url('images/background.jpg') no-repeat center/cover;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>text-shadow: 0 2px 6px rgba(0,0,0,0.5);</p>
-<p class="p1">}</p>
-<p class="p1">.hero h1 {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-size: 3rem;</p>
-<p class="p1">}</p>
-<p class="p1">.details {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>box-shadow: 0 4px 15px rgba(0,0,0,0.1);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>max-width: 600px;</p>
-<p class="p1">}</p>
-<p class="p1">a {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: #a67c52;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-weight: bold;</p>
-<p class="p1">}</p>
-<p class="p1">.footer {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: #a67c52;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding: 1.5rem;</p>
-<p class="p1">}</p>
-<p class="p1">#countdown {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-size: 1.5em;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: #8c6b48;</p>
-<p class="p1">}</p>
-<p class="p1">button.playPause {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>position: fixed;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>top: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>right: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding: 10px 15px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:#8c6b48;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:white;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border:none;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius:5px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>cursor:pointer;</p>
-<p class="p1">}</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- Background Music --&gt;</p>
-<p class="p1">&lt;audio id="bgMusic" autoplay loop&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;source src="love_instrumental.mp3" type="audio/mpeg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>Your browser does not support the audio element.</p>
-<p class="p1">&lt;/audio&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;button class="playPause" onclick="toggleMusic()"&gt;▶️ Play/Pause Music&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Բաբկեն &amp; Նոնա&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Հարսանեկան հրավերք&lt;/h2&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="details"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h3&gt;Կարդացեք այստեղ մանրամասները&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Տարիք, ժամ, վայր և այլ տեղեկություններ&lt;/p&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="footer"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Համարեք մեզ՝ մեր հարսանեկան օրը միասին!&lt;/p&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1">const music = document.getElementById('bgMusic');</p>
-<p class="p1">function toggleMusic() {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>if (music.paused) {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>music.play();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>music.pause();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">// Countdown Timer (example: change date to your wedding date)</p>
-<p class="p1">const countdown = document.getElementById('countdown');</p>
-<p class="p1">const weddingDate = new Date("2025-12-31T17:00:00"); // update to your wedding date</p>
-<p class="p1">function updateCountdown() {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const now = new Date();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const diff = weddingDate - now;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>if (diff &lt;= 0) {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>countdown.innerHTML = "🎉 Մենք արդեն ամուսնացել ենք! 🎉";</p>
-<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const days = Math.floor(diff / (1000 * 60 * 60 * 24));</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const minutes = Math.floor((diff / (1000 * 60)) % 60);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const seconds = Math.floor((diff / 1000) % 60);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>countdown.innerHTML = `Հարսանիքի մնացած ժամանակը: ${days} օր ${hours} ժամ ${minutes} րոպե ${seconds} վայրկյան`;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1">}</p>
-<p class="p1">setInterval(updateCountdown, 1000);</p>
-<p class="p1">updateCountdown();</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div id="countdown"&gt;&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="love_instrumental.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <button class="playPause" onclick="toggleMusic()">▶️ Play/Pause Music</button>
+
+  <script>
+    const music = document.getElementById('bgMusic');
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+
+    // Countdown Timer
+    const countdown = document.createElement('div');
+    countdown.id = 'countdown';
+    document.body.insertBefore(countdown, document.body.firstChild);
+
+    function updateCountdown() {
+      const weddingDate = new Date('2025-11-02T15:10:00');
+      const now = new Date();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        countdown.innerHTML = "💍 Հարսանիքը սկսվել է!";
+        clearInterval(interval);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdown.innerHTML = `⏳ Հեռավորություն մինչ մեր մեծ օրը: ${days} օր ${hours} ժամ ${minutes} րոպե ${seconds} վայրկյան`;
+    }
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+  </script>
+
+  <!-- Հերո -->
+  <section class="hero">
+    <h2>Հրավերք մեր հարսանիքին</h2>
+    <h1>Բաբկեն & Նոնա</h1>
+    <h3>02․11․2025</h3>
+  </section>
+
+  <!-- Եկեղեցի -->
+  <section>
+    <div class="details">
+      <h2>Եկեղեցի</h2>
+      <p>Սուրբ Հռիփսիմե եկեղեցի, Էջմիածին</p>
+      <p>Ժամը 15:10</p>
+      <p><a href="https://maps.google.com/?q=St+Hripsime+Church,+Ejmiatsin" target="_blank">Դիտել քարտեզում</a></p>
+    </div>
+  </section>
+
+  <!-- Ռեստորան -->
+  <section>
+    <div class="details">
+      <h2>Տոնակատարություն</h2>
+      <p>Morena Hall, Մասիս</p>
+      <p>Ժամը 17:30</p>
+      <p><a href="https://maps.google.com/?q=Morena+Hall,+Masis" target="_blank">Դիտել քարտեզում</a></p>
+    </div>
+  </section>
+
+  <!-- Հրավեր -->
+  <section>
+    <div class="details">
+      <h2>Սիրով հրավիրում ենք Ձեզ և Ձեր երկրորդ կեսին 🌸</h2>
+      <p>Մեծ ուրախությամբ սպասում ենք կիսելու մեր կյանքի ամենակարևոր օրը։</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section class="footer">
+    <p>Սպասում ենք Ձեզ սիրով 🤍</p>
+  </section>
+
 </body>
 </html>
