@@ -84,7 +84,19 @@
       color: #f9f6f0; /* dark grey for text */
       backdrop-filter: blur(5px); /* softening effect */
     }
+.main-content::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.05); /* very subtle dark overlay */
+  z-index: 0;
+}
 
+.main-content > * {
+  position: relative;
+  z-index: 1; /* keep text above overlay */
+}
     /* Calendar */
     .calendar {
       margin: 60px auto;
