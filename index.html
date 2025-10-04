@@ -12,56 +12,48 @@
     body {
       margin: 0;
       font-family: 'Georgia', serif;
-      background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
       background-size: cover;
-      color: #333;
+      color: #fff; /* text will be white */
+      text-align: center;
       line-height: 1.6;
     }
 
     h1, h2 {
       font-family: 'Great Vibes', cursive;
-      color: #8c6b48;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+
+    h3, p, a {
+      color: #fff;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
     }
 
     section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
-      margin: 30px auto;
+      padding: 3rem 1rem;
     }
 
     img {
       width: 100%;
-      max-width: 500px;
-      border-radius: 10px;
-      margin: 10px 0;
+      max-width: 600px;
+      border-radius: 15px;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
 
     a {
-      color: #a67c52;
+      color: #ffd700;
       text-decoration: none;
       font-weight: bold;
-    }
-
-    .footer {
-      background: #a67c52;
-      color: white;
-      padding: 1.5rem;
-      text-align: center;
     }
 
     #countdown {
       font-size: 1.5em;
       margin: 20px;
-      color: #8c6b48;
-      text-align: center;
+      color: #ffd700;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
     }
 
     button.playPause {
@@ -74,6 +66,12 @@
       border:none;
       border-radius:5px;
       cursor:pointer;
+    }
+
+    .footer {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -119,57 +117,3 @@
       const seconds = Math.floor((diff / 1000) % 60);
 
       countdown.innerHTML = `⏳ Time until our big day: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
-  </script>
-
-  <!-- Hero Section -->
-  <section>
-    <h2>You're Invited to Our Wedding</h2>
-    <h1>Babken & Nona</h1>
-    <h3>02.11.2025</h3>
-  </section>
-
-  <!-- Church Section -->
-  <section>
-    <h2>Church</h2>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/St_Hripsime_Church.jpg" alt="Saint Hripsime Church">
-    <p>Saint Hripsime Church, Ejmiatsin</p>
-    <p>Time: 15:10</p>
-    <p><a href="https://maps.google.com/?q=St+Hripsime+Church,+Ejmiatsin" target="_blank">View on map</a></p>
-  </section>
-
-  <!-- Reception Section -->
-  <section>
-    <h2>Reception</h2>
-    <img src="https://images.unsplash.com/photo-1544185314-efb207234b91?auto=format&fit=crop&w=1200&q=80" alt="Wedding Hall">
-    <p>Morena Hall, Masis</p>
-    <p>Time: 17:30</p>
-    <p><a href="https://maps.google.com/?q=Morena+Hall,+Masis" target="_blank">View on map</a></p>
-  </section>
-
-  <!-- Invitation Section -->
-  <section>
-    <h2>We invite you with love 🌸</h2>
-    <p>We look forward to sharing the most important day of our lives with you.</p>
-  </section>
-
-  <!-- Calendar Section -->
-  <section>
-    <h2>Save the Date</h2>
-    <p>
-      <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Babken+%26+Nona+Wedding&dates=20251102T151000/20251102T173000&details=Wedding+Celebration&location=Saint+Hripsime+Church+%26+Morena+Hall,+Armenia" target="_blank">
-        Add to Google Calendar 📅
-      </a>
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <section class="footer">
-    <p>Looking forward to celebrating with you 🤍</p>
-  </section>
-
-</body>
-</html>
