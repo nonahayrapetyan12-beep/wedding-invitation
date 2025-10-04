@@ -15,25 +15,35 @@
       position: relative;
     }
 
-    .save-date {
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      margin-top: 60px;
+    /* Countdown */
+    .countdown-text {
+      font-size: 20px;
+      font-weight: 500;
+      margin-top: 50px;
     }
+    .countdown {
+      font-size: 28px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    /* Header Names */
     .names {
       font-family: 'Great Vibes', cursive;
       font-size: 70px;
-      margin: 20px 0;
+      margin: 10px 0;
+      line-height: 1.1;
     }
+
     .date {
       font-size: 22px;
       margin-top: 10px;
       font-weight: 500;
     }
 
+    /* Calendar */
     .calendar {
-      margin: 80px auto;
+      margin: 60px auto;
       max-width: 500px;
     }
     .calendar h2 {
@@ -66,7 +76,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 28px; /* bigger heart */
+      font-size: 40px; /* bigger heart */
       color: rgba(255, 0, 0, 0.5); /* red transparent */
       z-index: 0;
     }
@@ -74,10 +84,12 @@
       position: relative;
       z-index: 1;
       font-weight: 600;
+      font-size: 18px;
     }
 
+    /* Sections */
     .section {
-      margin: 80px auto;
+      margin: 60px auto;
       max-width: 800px;
       padding: 0 20px;
     }
@@ -94,17 +106,29 @@
       margin-top: 20px;
       max-width: 100%;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
 
-    .maps-embed {
-      margin-top: 20px;
-      width: 100%;
-      height: 300px;
+    /* Map Buttons */
+    .map-button {
+      display: inline-block;
+      margin: 10px 5px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      background-color: #c44d4d;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .map-button:hover {
+      background-color: #a83b3b;
     }
 
+    /* Music Control */
     .music-control {
       position: fixed;
       top: 20px;
@@ -122,9 +146,15 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <div class="save-date">SAVE THE WEDDING DATE</div>
-  <div class="names">Babken & Nona</div>
+  <!-- Countdown -->
+  <div class="countdown-text">This much time until our big day:</div>
+  <div id="countdown" class="countdown"></div>
+
+  <!-- Header Names -->
+  <div class="names">
+    Babken<br>
+    Nona
+  </div>
   <div class="date">02 November 2025</div>
 
   <!-- Calendar -->
@@ -157,27 +187,55 @@
     <h2>Church</h2>
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/St_Hripsime_Church.jpg" alt="St Hripsime Church">
     <p>St Hripsime Church, Ejmiatsin, Armenia</p>
-    <iframe
-      class="maps-embed"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.0510239830635!2d44.29659041501225!3d40.17278037939462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406a7eb12f2419a7%3A0x10a7fae3c3e4b03f!2sSt%20Hripsime%20Church%2C%20Vagharshapat%2C%20Armenia!5e0!3m2!1sen!2sus!4v1696528900000" 
-      allowfullscreen=""
-      loading="lazy">
-    </iframe>
+    <a href="https://goo.gl/maps/7tJZ7XnS7XcJw6tU8" target="_blank" class="map-button">Open Church in Maps</a>
   </div>
 
   <!-- Hall Section -->
   <div class="section">
     <h2>Reception Hall</h2>
-    <img src="https://via.placeholder.com/800x400?text=Morena+Hall" alt="Morena Hall">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Morena_Hall_Masis_Armenia.jpg" alt="Morena Hall">
     <p>Morena Hall, Masis, Armenia</p>
-    <iframe
-      class="maps-embed"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3014.569118774864!2d44.44150741502405!3d39.98259497944151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406ab1e8f03d9aab%3A0xd7812fc1c4f4a8e7!2sMorena%20Restaurant%20Complex%2C%20Masis%2C%20Armenia!5e0!3m2!1sen!2sus!4v1696529000000"
-      allowfullscreen=""
-      loading="lazy">
-    </iframe>
+    <a href="https://goo.gl/maps/6X1vM9hZs5vL1Zn88" target="_blank" class="map-button">Open Hall in Maps</a>
   </div>
 
   <!-- Music -->
   <audio id="bg-music" loop autoplay>
-    <source src="your-music-file.mp3" type="aud
+    <source src="your-music-file.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <div class="music-control" onclick="toggleMusic()">
+    <img id="music-icon" src="https://img.icons8.com/ios-filled/50/000000/mute.png" alt="Music control">
+  </div>
+
+  <script>
+    // Countdown
+    const weddingDate = new Date("November 2, 2025 12:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+
+    // Music control
+    const music = document.getElementById("bg-music");
+    const icon = document.getElementById("music-icon");
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        icon.src = "https://img.icons8.com/ios-filled/50/000000/speaker.png";
+      } else {
+        music.pause();
+        icon.src = "https://img.icons8.com/ios-filled/50/000000/mute.png";
+      }
+    }
+  </script>
+
+</body>
+</html>
