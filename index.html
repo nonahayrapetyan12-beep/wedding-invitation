@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Babken & Nona | Wedding Invitation</title>
+  <title>Babken ♡ Nona | Wedding Invitation</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -15,8 +15,6 @@
       line-height: 1.6;
       position: relative;
     }
-
-    /* Overlay to soften background */
     body::before {
       content: "";
       position: fixed;
@@ -26,18 +24,7 @@
       z-index: -1;
     }
 
-    /* Invitation Text */
-    .invitation-text {
-      font-size: 22px;
-      margin-top: 40px;
-      font-weight: 500;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.4;
-    }
-
-    /* Countdown aligned in one line */
+    /* Countdown */
     .countdown-container {
       margin: 40px 0;
       font-size: 24px;
@@ -54,13 +41,13 @@
       text-align: left;
     }
 
-    /* Header Names - aesthetic */
+    /* Header Names */
     .names {
       font-family: 'Great Vibes', cursive;
-      font-size: 80px;
+      font-size: 100px;
       margin: 30px 0;
       line-height: 1.0;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.2);
       color: #b44d4d;
     }
 
@@ -78,10 +65,11 @@
       width: 100%;
       border-collapse: collapse;
       margin-top: 15px;
+      table-layout: fixed;
     }
     th, td {
-      width: 14%;
-      padding: 10px;
+      width: 14.28%;
+      padding: 10px 0;
       text-align: center;
       font-size: 18px;
       position: relative;
@@ -90,17 +78,17 @@
       font-weight: 600;
     }
 
-    /* Red transparent pulsating heart */
+    /* Pulsating red heart */
     .highlight-heart {
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       animation: pulse 1.5s infinite;
     }
     .highlight-heart:before {
       content: "❤";
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       font-size: 40px;
       color: rgba(255, 0, 0, 0.5);
       z-index: 0;
@@ -112,9 +100,9 @@
       font-size: 18px;
     }
     @keyframes pulse {
-      0% { transform: translate(-50%, -50%) scale(1); }
-      50% { transform: translate(-50%, -50%) scale(1.2); }
-      100% { transform: translate(-50%, -50%) scale(1); }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
     }
 
     /* Sections */
@@ -190,12 +178,6 @@
 
   <div class="sketches"></div>
 
-  <!-- Invitation Text -->
-  <div class="invitation-text">
-    You are cordially invited to celebrate the wedding of Babken and Nona. <br>
-    Join us for a day full of love, laughter, and cherished memories.
-  </div>
-
   <!-- Countdown -->
   <div class="countdown-container">
     <div>⏳ Time until our big day:</div>
@@ -203,10 +185,7 @@
   </div>
 
   <!-- Header Names -->
-  <div class="names">
-    Babken<br>
-    Nona
-  </div>
+  <div class="names">Babken ♡ Nona</div>
 
   <!-- Calendar -->
   <div class="calendar">
@@ -216,7 +195,8 @@
         <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
       </tr>
       <tr>
-        <td></td><td></td><td></td><td></td><td></td><td>1</td><td class="highlight-heart"><span>2</span></td>
+        <td></td><td></td><td></td><td></td><td></td><td>1</td>
+        <td class="highlight-heart"><span>2</span></td>
       </tr>
       <tr>
         <td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
@@ -231,6 +211,13 @@
         <td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
       </tr>
     </table>
+  </div>
+
+  <!-- Invitation Section -->
+  <div class="section">
+    <h2>Invitation</h2>
+    <p>You are cordially invited to celebrate the wedding of Babken and Nona.<br>
+    Join us for a day full of love, laughter, and cherished memories.</p>
   </div>
 
   <!-- Church Section -->
