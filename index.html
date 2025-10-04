@@ -79,26 +79,32 @@
     }
 
     /* Pulsating red heart */
-    .highlight-heart {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      animation: pulse 1.5s infinite;
-    }
-    .highlight-heart:before {
-      content: "❤";
-      position: absolute;
-      font-size: 40px;
-      color: rgba(255, 0, 0, 0.5);
-      z-index: 0;
-    }
-    .highlight-heart span {
-      position: relative;
-      z-index: 2;
-      font-weight: 600;
-      font-size: 18px;
-    }
+.highlight-heart {
+  display: flex;             /* enables flexbox */
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
+  position: relative;        /* keep pseudo-element on top */
+  animation: pulse 1.5s infinite;
+}
+
+.highlight-heart:before {
+  content: "❤";
+  font-size: 40px;
+  color: rgba(255, 0, 0, 0.5);
+  position: absolute;        /* keep heart behind the number */
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.highlight-heart span {
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 18px;
+}
+
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.2); }
