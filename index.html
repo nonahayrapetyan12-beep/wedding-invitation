@@ -8,9 +8,10 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      color: #4a3f2f; /* readable body text */
+      color: #000; /* black text for body */
       text-align: center;
       line-height: 1.6;
+      background: #fff; /* white background for main content */
     }
 
     /* Header Section with bg image */
@@ -18,15 +19,15 @@
       background: url('bg2.jpg') no-repeat center center;
       background-size: cover;
       position: relative;
-      padding: 60px 20px 40px; /* extra bottom padding for date */
-      color: #d6e0b8;
+      padding: 60px 20px 40px;
+      color: #fff; /* header text in white */
     }
     .header-section::before {
       content: "";
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(249,246,240,0.85); /* overlay for readability */
+      background: rgba(0,0,0,0.5); /* dark overlay for B&W effect */
       z-index: 0;
     }
     .header-section .countdown-container,
@@ -51,6 +52,7 @@
       font-weight: 600;
       min-width: 180px;
       text-align: left;
+      color: #fff;
     }
 
     /* Header Names */
@@ -59,8 +61,8 @@
       font-size: 100px;
       margin: 30px 0 10px;
       line-height: 1.0;
-      text-shadow: 3px 3px 8px rgba(0,0,0,0.2);
-      color: #556B2F; /* dark olive green */
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
     }
 
     /* Wedding Date */
@@ -68,15 +70,16 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 36px;
       font-weight: 600;
-      color: rgba(214, 224, 184, 0.95); /* soft light olive */
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+      color: #fff;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
       margin-top: 0;
     }
 
-    /* Main content with different background */
+    /* Main content */
     .main-content {
-      background: #f9f6f0; /* light cream */
+      background: #fff; /* white background */
       padding: 60px 20px;
+      color: #000; /* black text */
     }
 
     /* Calendar */
@@ -88,7 +91,7 @@
       font-size: 26px;
       font-weight: 600;
       margin-bottom: 10px;
-      color: #7a884f; /* soft olive green */
+      color: #000;
     }
     table {
       width: 100%;
@@ -102,6 +105,7 @@
       text-align: center;
       font-size: 18px;
       position: relative;
+      color: #000;
     }
     th {
       font-weight: 600;
@@ -121,7 +125,7 @@
     .highlight-heart:before {
       content: "❤";
       font-size: 40px;
-      color: rgba(201,79,79,0.6); /* warm red */
+      color: rgba(201,79,79,0.9); /* keep red heart */
       position: absolute;
       top: 50%;
       left: 50%;
@@ -150,18 +154,19 @@
       font-family: 'Great Vibes', cursive;
       font-size: 42px;
       margin-bottom: 20px;
-      color: #556B2F; /* dark olive green */
+      color: #000;
     }
     .section p {
       font-size: 18px;
       margin: 10px 0;
-      color: #4a3f2f; /* readable body text */
+      color: #000;
     }
     .section img {
       margin-top: 20px;
       max-width: 100%;
       border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      filter: grayscale(100%); /* make images B&W */
     }
 
     /* Map Buttons */
@@ -172,7 +177,7 @@
       font-size: 16px;
       font-weight: 600;
       color: #fff;
-      background-color: #556B2F; /* dark olive green */
+      background-color: #000; /* black buttons */
       border: none;
       border-radius: 8px;
       cursor: pointer;
@@ -180,7 +185,7 @@
       transition: background 0.3s;
     }
     .map-button:hover {
-      background-color: #8a2f2f; /* warm red accent */
+      background-color: #444; /* dark gray hover */
     }
 
     /* Music Control */
@@ -198,7 +203,7 @@
       width: 28px; height: 28px;
     }
 
-    /* Optional floral sketches overlay for main content */
+    /* Optional floral sketches overlay (grayscale) */
     .sketches {
       position: fixed;
       top: 0; left: 0;
@@ -207,7 +212,8 @@
       background: url('https://i.ibb.co/r4SH6pG/floral-sketch.png') no-repeat center top;
       background-size: contain;
       z-index: -1;
-      opacity: 0.25;
+      opacity: 0.2;
+      filter: grayscale(100%);
     }
   </style>
 </head>
@@ -272,7 +278,7 @@
 
     <!-- Hall Section -->
     <div class="section">
-      <h2>Wedding Hall</h2>
+      <h2>Reception Hall</h2>
       <img src="hall.jpg" alt="Morena Hall">
       <p>Morena Hall, Masis, Armenia</p>
       <a href="https://goo.gl/maps/6X1vM9hZs5vL1Zn88" target="_blank" class="map-button">Open Hall in Maps</a>
@@ -293,30 +299,4 @@
     const weddingDate = new Date("November 2, 2025 12:00:00").getTime();
     const countdownEl = document.getElementById("countdown");
     setInterval(() => {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }, 1000);
-
-    // Music control
-    const music = document.getElementById("bg-music");
-    const icon = document.getElementById("music-icon");
-    function toggleMusic() {
-      if (music.paused) {
-        music.play();
-        icon.src = "https://img.icons8.com/ios-filled/50/000000/speaker.png";
-      } else {
-        music.pause();
-        icon.src = "https://img.icons8.com/ios-filled/50/000000/mute.png";
-      }
-    }
-  </script>
-
-</body>
-</html>
+      const now = n
