@@ -77,22 +77,32 @@
     th {
       font-weight: 600;
     }
+    td {
+      width: 14.28%;
+      padding: 5px 0;         /* reduce padding if too large */
+      text-align: center;
+      vertical-align: middle; /* align content vertically */
+    }
+
 
     /* Pulsating red heart */
 .highlight-heart {
-  display: flex;             /* enables flexbox */
-  justify-content: center;   /* center horizontally */
-  align-items: center;       /* center vertically */
-  position: relative;        /* keep pseudo-element on top */
+  display: flex;             /* center content */
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;    /* important for table alignment */
   animation: pulse 1.5s infinite;
 }
 
 .highlight-heart:before {
   content: "❤";
-  font-size: 40px;
+  font-size: 40px;           /* adjust size to fit number */
   color: rgba(255, 0, 0, 0.5);
-  position: absolute;        /* keep heart behind the number */
-  top: 50%; 
+  position: absolute;        /* behind the number */
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
@@ -104,6 +114,7 @@
   font-weight: 600;
   font-size: 18px;
 }
+
 
     @keyframes pulse {
       0% { transform: scale(1); }
