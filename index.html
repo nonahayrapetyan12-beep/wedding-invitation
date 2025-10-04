@@ -2,26 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Babken & Nona | Wedding Invitation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
   <style>
-    body {
+    body, html {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      color: #333;
-      text-align: center;
-      line-height: 1.6;
-      background: #fff;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      color: white;
     }
 
     /* Header Section */
     .header-section {
-      background: url('ring.jpg') no-repeat center center;
-      background-size: cover;
       position: relative;
-      padding: 60px 20px 40px;
-      color: #fff;
+      height: 100vh;
+      background: url('ring.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
     }
+
+    /* Dark overlay on header */
     .header-section::before {
       content: "";
       position: absolute;
@@ -31,264 +35,123 @@
       z-index: 0;
     }
 
-    .header-section .countdown-container,
-    .header-section .names,
-    .header-section .wedding-date {
+    .header-content {
       position: relative;
       z-index: 1;
     }
 
-    /* Countdown */
-    .countdown-container {
-      margin: 40px 0;
-      font-size: 24px;
-      font-weight: 500;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
+    .header-content h1 {
+      font-size: 4rem;
+      margin: 0;
     }
+
+    .date {
+      font-size: 2rem;
+      margin: 10px 0;
+    }
+
     .countdown {
-      font-size: 28px;
-      font-weight: 600;
-      min-width: 180px;
-      text-align: left;
-      color: #fff;
+      font-size: 2rem;
+      margin-top: 20px;
+      color: white;
     }
 
-    /* Header Names */
-    .names {
-      font-family: 'Great Vibes', cursive;
-      font-size: 100px;
-      margin: 30px 0 10px;
-      line-height: 1.0;
-      color: #fff;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-    }
-
-    /* Wedding Date */
-    .wedding-date {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 36px;
-      font-weight: 600;
-      color: #fff;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
-      margin-top: 0;
-    }
-
-    /* Main content */
-    .main-content {
-      background: #f9f6f0; /* soft beige */
+    /* Invitation Section */
+    .invitation-section {
+      position: relative;
+      background: url('light-grey-bg.jpg') center/cover no-repeat;
+      min-height: 100vh;
       padding: 60px 20px;
-      color: #333;
-      position: relative;
-    }
-
-    /* Calendar */
-    .calendar {
-      margin: 60px auto;
-      max-width: 500px;
-    }
-    .calendar h2 {
-      font-size: 28px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: #333;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-      table-layout: fixed;
-    }
-    th, td {
-      width: 14.28%;
-      padding: 5px 0;
       text-align: center;
-      font-size: 18px;
-      position: relative;
-      color: #333;
-    }
-    th {
-      font-weight: 600;
+      color: white;
     }
 
-    /* Pulsating red heart */
-    .highlight-heart {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      width: 100%;
-      height: 100%;
-      vertical-align: middle;
-      animation: pulse 1.5s infinite;
-    }
-    .highlight-heart:before {
-      content: "❤";
-      font-size: 40px;
-      color: rgba(201,79,79,0.9);
+    /* Dark overlay for second bg */
+    .invitation-section::before {
+      content: "";
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
       z-index: 0;
     }
-    .highlight-heart span {
+
+    .invitation-content {
       position: relative;
       z-index: 1;
-      font-weight: 600;
-      font-size: 18px;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
     }
 
-    /* Sections */
-    .section {
-      margin: 60px auto;
-      max-width: 800px;
-      padding: 0 20px;
+    .invitation-content h2 {
+      font-size: 3rem;
+      margin-bottom: 40px;
     }
-    .section h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 52px; /* bigger Invitation */
-      margin-bottom: 20px;
-      color: #333;
+
+    .places {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
     }
-    .section .section-header {
-      font-family: 'Great Vibes', cursive;
-      font-size: 48px; /* bigger Church, Hall */
-      font-weight: 600;
+
+    .place {
+      max-width: 300px;
+    }
+
+    .place h3 {
+      font-size: 1.5rem;
       margin-bottom: 10px;
-      color: #333;
     }
-    .section .section-subheader {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 20px;
-      margin-bottom: 15px;
-      color: #555;
-    }
-    .section .venue-name {
-      font-weight: 600;
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: #333;
-    }
-    .section img {
-      margin-top: 10px;
-      max-width: 400px;
+
+    .place img {
+      width: 100%;
       border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     }
 
-    /* Map Buttons */
-    .map-button {
-      display: inline-block;
-      margin: 10px 5px;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-      background-color: #555;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .map-button:hover {
-      background-color: #333;
-    }
-
-    /* Music Control */
-    .music-control {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: rgba(255,255,255,0.7);
-      border-radius: 50%;
-      padding: 10px;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .music-control img {
-      width: 28px; height: 28px;
+    /* Music hidden */
+    iframe {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <div class="header-section">
-    <div class="countdown-container">
-      <div>⏳ Time until our big day:</div>
-      <div id="countdown" class="countdown"></div>
+  <!-- Background Music (YouTube Embed) -->
+  <iframe width="0" height="0"
+          src="https://www.youtube.com/embed/KiN0iDU5xUA?autoplay=1&loop=1&playlist=KiN0iDU5xUA"
+          frameborder="0"
+          allow="autoplay">
+  </iframe>
+
+  <!-- Header Section -->
+  <section class="header-section">
+    <div class="header-content">
+      <h1>Babken & Nona</h1>
+      <div class="date">02/11/2025</div>
+      <div class="countdown" id="countdown"></div>
     </div>
-    <div class="names">Babken & Nona</div>
-    <div class="wedding-date">02/11/2025</div>
-  </div>
+  </section>
 
-  <!-- Main content -->
-  <div class="main-content">
-
-    <!-- Calendar -->
-    <div class="calendar">
-      <h2>November 2025</h2>
-      <table>
-        <tr>
-          <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td>1</td>
-          <td class="highlight-heart"><span>2</span></td>
-        </tr>
-        <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
-        <tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
-        <tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
-        <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
-      </table>
-    </div>
-
-    <!-- Invitation Section -->
-    <div class="section">
+  <!-- Invitation Section -->
+  <section class="invitation-section">
+    <div class="invitation-content">
       <h2>Invitation</h2>
-      <p>You are cordially invited to celebrate the wedding of Babken and Nona.<br>
-      Join us for a day full of love, laughter, and cherished memories.</p>
+      <div class="places">
+        <div class="place">
+          <h3>St Hripsime Church</h3>
+          <img src="church.jpg" alt="Church">
+        </div>
+        <div class="place">
+          <h3>Monrena Hall</h3>
+          <img src="hall.jpg" alt="Hall">
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Church Section -->
-    <div class="section">
-      <div class="section-header">Church</div>
-      <div class="section-subheader">Time: 12:00 PM</div>
-      <div class="venue-name">St Hripsime Church</div>
-      <img src="church.jpg" alt="St Hripsime Church">
-      <p>Ejmiatsin, Armenia</p>
-      <a href="https://goo.gl/maps/7tJZ7XnS7XcJw6tU8" target="_blank" class="map-button">Open Church in Maps</a>
-    </div>
-
-    <!-- Hall Section -->
-    <div class="section">
-      <div class="section-header">Wedding Hall</div>
-      <div class="section-subheader">Time: 14:00 PM</div>
-      <div class="venue-name">Morena Hall</div>
-      <img src="hall.jpg" alt="Morena Hall">
-      <p>Masis, Armenia</p>
-      <a href="https://goo.gl/maps/6X1vM9hZs5vL1Zn88" target="_blank" class="map-button">Open Hall in Maps</a>
-    </div>
-
-  </div>
-
-  <!-- Background Music -->
-  <iframe width="0" height="0" src="https://www.youtube.com/embed/KiN0iDU5xUA?autoplay=1&loop=1&playlist=KiN0iDU5xUA" frameborder="0" allow="autoplay"></iframe>
-
+  <!-- Countdown Script -->
   <script>
-    // Countdown
-    const weddingDate = new Date("November 2, 2025 12:00:00").getTime();
-    const countdownEl = document.getElementById("countdown");
-    setInterval(() => {
+    function countdown() {
+      const weddingDate = new Date("Nov 2, 2025 00:00:00").getTime();
       const now = new Date().getTime();
       const distance = weddingDate - now;
 
@@ -297,8 +160,11 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }, 1000);
+      document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    }
+
+    setInterval(countdown, 1000);
   </script>
 
 </body>
