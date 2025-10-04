@@ -8,19 +8,19 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      color: #000; /* black text for body */
+      color: #333; /* dark grey for main text */
       text-align: center;
       line-height: 1.6;
-      background: #fff; /* white background for main content */
+      background: #fff;
     }
 
     /* Header Section with bg image */
     .header-section {
-      background: url('bg2.jpg') no-repeat center center;
+      background: url('ring.jpg') no-repeat center center;
       background-size: cover;
       position: relative;
       padding: 60px 20px 40px;
-      color: #fff; /* header text in white */
+      color: #fff;
     }
     .header-section::before {
       content: "";
@@ -52,7 +52,7 @@
       font-weight: 600;
       min-width: 180px;
       text-align: left;
-      color: #fff;
+      color: #fff; /* white for visibility */
     }
 
     /* Header Names */
@@ -77,9 +77,9 @@
 
     /* Main content */
     .main-content {
-      background: #fff; /* white background */
+      background: #fff;
       padding: 60px 20px;
-      color: #000; /* black text */
+      color: #333; /* dark grey for text */
     }
 
     /* Calendar */
@@ -91,7 +91,7 @@
       font-size: 26px;
       font-weight: 600;
       margin-bottom: 10px;
-      color: #000;
+      color: #333;
     }
     table {
       width: 100%;
@@ -105,7 +105,7 @@
       text-align: center;
       font-size: 18px;
       position: relative;
-      color: #000;
+      color: #333;
     }
     th {
       font-weight: 600;
@@ -154,19 +154,25 @@
       font-family: 'Great Vibes', cursive;
       font-size: 42px;
       margin-bottom: 20px;
-      color: #000;
+      color: #333;
     }
     .section p {
       font-size: 18px;
       margin: 10px 0;
-      color: #000;
+      color: #333;
     }
     .section img {
-      margin-top: 20px;
-      max-width: 100%;
+      margin-top: 10px;
+      max-width: 400px; /* smaller size */
       border-radius: 10px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      filter: grayscale(100%); /* make images B&W */
+    }
+
+    .section .venue-name {
+      font-weight: 600;
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #333;
     }
 
     /* Map Buttons */
@@ -177,7 +183,7 @@
       font-size: 16px;
       font-weight: 600;
       color: #fff;
-      background-color: #000; /* black buttons */
+      background-color: #555; /* dark grey buttons */
       border: none;
       border-radius: 8px;
       cursor: pointer;
@@ -185,7 +191,7 @@
       transition: background 0.3s;
     }
     .map-button:hover {
-      background-color: #444; /* dark gray hover */
+      background-color: #333; /* darker on hover */
     }
 
     /* Music Control */
@@ -203,7 +209,7 @@
       width: 28px; height: 28px;
     }
 
-    /* Optional floral sketches overlay (grayscale) */
+    /* Optional floral sketches overlay */
     .sketches {
       position: fixed;
       top: 0; left: 0;
@@ -213,7 +219,6 @@
       background-size: contain;
       z-index: -1;
       opacity: 0.2;
-      filter: grayscale(100%);
     }
   </style>
 </head>
@@ -235,6 +240,7 @@
 
   <!-- Main content -->
   <div class="main-content">
+
     <!-- Calendar -->
     <div class="calendar">
       <h2>November 2025</h2>
@@ -260,7 +266,6 @@
         </tr>
       </table>
     </div>
-
     <!-- Invitation Section -->
     <div class="section">
       <h2>Invitation</h2>
@@ -270,17 +275,17 @@
 
     <!-- Church Section -->
     <div class="section">
-      <h2>Church</h2>
+      <div class="venue-name">St Hripsime Church</div>
       <img src="church.jpg" alt="St Hripsime Church">
-      <p>St Hripsime Church, Ejmiatsin, Armenia</p>
+      <p>Ejmiatsin, Armenia</p>
       <a href="https://goo.gl/maps/7tJZ7XnS7XcJw6tU8" target="_blank" class="map-button">Open Church in Maps</a>
     </div>
 
     <!-- Hall Section -->
     <div class="section">
-      <h2>Reception Hall</h2>
+      <div class="venue-name">Morena Hall</div>
       <img src="hall.jpg" alt="Morena Hall">
-      <p>Morena Hall, Masis, Armenia</p>
+      <p>Masis, Armenia</p>
       <a href="https://goo.gl/maps/6X1vM9hZs5vL1Zn88" target="_blank" class="map-button">Open Hall in Maps</a>
     </div>
   </div>
@@ -299,4 +304,30 @@
     const weddingDate = new Date("November 2, 2025 12:00:00").getTime();
     const countdownEl = document.getElementById("countdown");
     setInterval(() => {
-      const now = n
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+
+    // Music control
+    const music = document.getElementById("bg-music");
+    const icon = document.getElementById("music-icon");
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        icon.src = "https://img.icons8.com/ios-filled/50/000000/speaker.png";
+      } else {
+        music.pause();
+        icon.src = "https://img.icons8.com/ios-filled/50/000000/mute.png";
+      }
+    }
+  </script>
+
+</body>
+</html>
