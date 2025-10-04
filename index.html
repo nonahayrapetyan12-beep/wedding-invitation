@@ -77,9 +77,10 @@
 
     /* Main content */
     .main-content {
-      background: #fff;
+      background: rgba(200, 200, 200, 0.15); /* soft transparent grey */
       padding: 60px 20px;
       color: #333; /* dark grey for text */
+      backdrop-filter: blur(5px); /* softening effect */
     }
 
     /* Calendar */
@@ -125,7 +126,7 @@
     .highlight-heart:before {
       content: "❤";
       font-size: 40px;
-      color: rgba(201,79,79,0.9); /* keep red heart */
+      color: rgba(201,79,79,0.9); /* red heart */
       position: absolute;
       top: 50%;
       left: 50%;
@@ -168,6 +169,20 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     }
 
+    /* Venue headers */
+    .section .section-header {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .section .section-subheader {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #555;
+    }
     .section .venue-name {
       font-weight: 600;
       font-size: 22px;
@@ -266,6 +281,7 @@
         </tr>
       </table>
     </div>
+
     <!-- Invitation Section -->
     <div class="section">
       <h2>Invitation</h2>
@@ -275,6 +291,8 @@
 
     <!-- Church Section -->
     <div class="section">
+      <div class="section-header">Church</div>
+      <div class="section-subheader">Time: 12:00 PM</div>
       <div class="venue-name">St Hripsime Church</div>
       <img src="church.jpg" alt="St Hripsime Church">
       <p>Ejmiatsin, Armenia</p>
@@ -283,11 +301,14 @@
 
     <!-- Hall Section -->
     <div class="section">
+      <div class="section-header">Wedding Hall</div>
+      <div class="section-subheader">Time: 14:00 PM</div>
       <div class="venue-name">Morena Hall</div>
       <img src="hall.jpg" alt="Morena Hall">
       <p>Masis, Armenia</p>
       <a href="https://goo.gl/maps/6X1vM9hZs5vL1Zn88" target="_blank" class="map-button">Open Hall in Maps</a>
     </div>
+
   </div>
 
   <!-- Music -->
