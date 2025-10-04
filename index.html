@@ -1,175 +1,183 @@
 <!DOCTYPE html>
-<html lang="hy">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Babken & Nona | Հարսանեկան հրավերք</title>
+  <title>Babken & Nona | Wedding Invitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background: #f9f7f6;
-      color: #333;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9f6f0;
+      color: #4a2c12;
+      text-align: center;
       line-height: 1.6;
+      position: relative;
     }
 
-    /* Hero Section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      background: url('https://images.unsplash.com/photo-1506086679527-0e26b9e0c0c4?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
-      color: white;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-      padding: 2rem;
-    }
-
-    .hero h1 {
-      font-size: 4rem;
-      margin: 0.5rem 0;
+    .save-date {
+      font-size: 18px;
+      font-weight: 600;
       letter-spacing: 2px;
+      margin-top: 60px;
+    }
+    .names {
+      font-family: 'Great Vibes', cursive;
+      font-size: 70px;
+      margin: 20px 0;
+    }
+    .date {
+      font-size: 22px;
+      margin-top: 10px;
+      font-weight: 500;
     }
 
-    #countdown {
-      font-size: 1.5rem;
+    .calendar {
+      margin: 80px auto;
+      max-width: 500px;
+    }
+    .calendar h2 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      width: 14%;
+      padding: 10px;
+      text-align: center;
+      font-size: 18px;
+      position: relative;
+    }
+    th {
+      font-weight: 600;
+    }
+
+    /* Red transparent heart for wedding date */
+    .highlight-heart {
+      position: relative;
+    }
+    .highlight-heart:before {
+      content: "❤";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28px; /* bigger heart */
+      color: rgba(255, 0, 0, 0.5); /* red transparent */
+      z-index: 0;
+    }
+    .highlight-heart span {
+      position: relative;
+      z-index: 1;
+      font-weight: 600;
+    }
+
+    .section {
+      margin: 80px auto;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    .section h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+    .section p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .section img {
       margin-top: 20px;
-      color: #ffe4c4;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    @media(max-width: 600px) {
-      .hero h1 { font-size: 2.5rem; }
-      #countdown { font-size: 1rem; }
+    .maps-embed {
+      margin-top: 20px;
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
     }
 
-    /* Sections */
-    section {
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-
-    section h2 {
-      color: #a67c52;
-      margin-bottom: 0.5rem;
-    }
-
-    section p {
-      margin: 0.3rem 0;
-    }
-
-    a {
-      color: #a67c52;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* Footer */
-    footer {
-      background: #a67c52;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      font-size: 1.2rem;
-    }
-
-    /* Music Button */
-    button.playPause {
+    .music-control {
       position: fixed;
-      top: 10px;
-      right: 10px;
-      padding: 10px 15px;
-      background:#8c6b48;
-      color:white;
-      border:none;
-      border-radius:5px;
-      cursor:pointer;
-      font-weight: bold;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 50%;
+      padding: 10px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .music-control img {
+      width: 28px; height: 28px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Background Music -->
-  <audio id="bgMusic" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <!-- Header -->
+  <div class="save-date">SAVE THE WEDDING DATE</div>
+  <div class="names">Babken & Nona</div>
+  <div class="date">02 November 2025</div>
 
-  <button class="playPause" onclick="toggleMusic()">▶️ Play/Pause Music</button>
-
-  <script>
-    const music = document.getElementById('bgMusic');
-    function toggleMusic() {
-      if (music.paused) {
-        music.play();
-      } else {
-        music.pause();
-      }
-    }
-
-    // Countdown Timer
-    const countdown = document.getElementById('countdown');
-    function updateCountdown() {
-      const weddingDate = new Date('2025-11-02T15:10:00');
-      const now = new Date();
-      const diff = weddingDate - now;
-
-      if (diff <= 0) {
-        countdown.innerHTML = "💍 Հարսանիքը սկսվել է!";
-        clearInterval(interval);
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      // Armenian weekdays
-      const weekdays = ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"];
-      const dayOfWeek = weekdays[weddingDate.getDay()]; // 0=Sunday
-
-      countdown.innerHTML = `⏳ ${days} օր ${hours} ժամ ${minutes} րոպե ${seconds} վայրկյան — ${dayOfWeek} ❤️`;
-    }
-
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
-  </script>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Babken & Nona</h1>
-    <div id="countdown"></div>
-  </section>
+  <!-- Calendar -->
+  <div class="calendar">
+    <h2>November 2025</h2>
+    <table>
+      <tr>
+        <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td><td></td><td>1</td><td class="highlight-heart"><span>2</span></td>
+      </tr>
+      <tr>
+        <td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+      </tr>
+      <tr>
+        <td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+      </tr>
+      <tr>
+        <td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+      </tr>
+      <tr>
+        <td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+      </tr>
+    </table>
+  </div>
 
   <!-- Church Section -->
-  <section>
-    <h2>Եկեղեցի</h2>
-    <p>Սուրբ Հռիփսիմե եկեղեցի, Էջմիածին</p>
-    <p>Ժամը 15:10</p>
-    <p><a href="https://maps.google.com/?q=St+Hripsime+Church,+Ejmiatsin" target="_blank">Դիտել քարտեզում</a></p>
-  </section>
+  <div class="section">
+    <h2>Church</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/St_Hripsime_Church.jpg" alt="St Hripsime Church">
+    <p>St Hripsime Church, Ejmiatsin, Armenia</p>
+    <iframe
+      class="maps-embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.0510239830635!2d44.29659041501225!3d40.17278037939462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406a7eb12f2419a7%3A0x10a7fae3c3e4b03f!2sSt%20Hripsime%20Church%2C%20Vagharshapat%2C%20Armenia!5e0!3m2!1sen!2sus!4v1696528900000" 
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
 
-  <!-- Reception Section -->
-  <section>
-    <h2>Տոնակատարություն</h2>
-    <p>Morena Hall, Մասիս</p>
-    <p>Ժամը 17:30</p>
-    <p><a href="https://maps.google.com/?q=Morena+Hall,+Masis" target="_blank">Դիտել քարտեզում</a></p>
-  </section>
+  <!-- Hall Section -->
+  <div class="section">
+    <h2>Reception Hall</h2>
+    <img src="https://via.placeholder.com/800x400?text=Morena+Hall" alt="Morena Hall">
+    <p>Morena Hall, Masis, Armenia</p>
+    <iframe
+      class="maps-embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3014.569118774864!2d44.44150741502405!3d39.98259497944151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406ab1e8f03d9aab%3A0xd7812fc1c4f4a8e7!2sMorena%20Restaurant%20Complex%2C%20Masis%2C%20Armenia!5e0!3m2!1sen!2sus!4v1696529000000"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
 
-  <!-- Invitation Section -->
-  <section>
-    <h2>Սիրով հրավիրում ենք Ձեզ և Ձեր երկրորդ կեսին 🌸</h2>
-    <p>Մեծ ուրախությամբ սպասում ենք կիսելու մեր կյանքի ամենակարևոր օրը։</p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    Սպասում ենք Ձեզ սիրով 🤍
-  </footer>
-
-</body>
-</html>
+  <!-- Music -->
+  <audio id="bg-music" loop autoplay>
+    <source src="your-music-file.mp3" type="aud
