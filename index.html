@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Wedding Invitation</title>
+  <title>Babken & Nona | Wedding Invitation</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -15,7 +15,6 @@
       position: relative;
     }
 
-    /* HEADER */
     .save-date {
       font-size: 18px;
       font-weight: 600;
@@ -33,7 +32,6 @@
       font-weight: 500;
     }
 
-    /* CALENDAR */
     .calendar {
       margin: 80px auto;
       max-width: 500px;
@@ -60,9 +58,22 @@
       background-color: #cbbfa3;
       border-radius: 50%;
       color: white;
+      position: relative;
+    }
+    .highlight:before {
+      content: "❤";
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 16px;
+      color: #cbbfa3;
+    }
+    .highlight span {
+      position: relative;
+      z-index: 1;
     }
 
-    /* SECTION */
     .section {
       margin: 80px auto;
       max-width: 800px;
@@ -84,7 +95,14 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    /* MUSIC BUTTON */
+    .maps-embed {
+      margin-top: 20px;
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+    }
+
     .music-control {
       position: fixed;
       top: 20px;
@@ -96,64 +114,73 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
     .music-control img {
-      width: 28px;
-      height: 28px;
+      width: 28px; height: 28px;
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- Header -->
   <div class="save-date">SAVE THE WEDDING DATE</div>
-  <div class="names">Yuri & Sona</div>
-  <div class="date">16/08/2025</div>
+  <div class="names">Babken & Nona</div>
+  <div class="date">02 November 2025</div>
 
-  <!-- CALENDAR -->
+  <!-- Calendar -->
   <div class="calendar">
-    <h2>August 2025</h2>
+    <h2>November 2025</h2>
     <table>
       <tr>
         <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
       </tr>
       <tr>
-        <td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td></td>
+        <td></td><td></td><td></td><td></td><td>1</td><td class="highlight"><span>2</span></td><td>3</td>
       </tr>
       <tr>
         <td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
       </tr>
       <tr>
-        <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
-        <td class="highlight">16</td><td>17</td>
+        <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
       </tr>
       <tr>
         <td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
       </tr>
       <tr>
-        <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+        <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td></td>
       </tr>
     </table>
   </div>
 
-  <!-- LOCATION -->
+  <!-- Church Section -->
   <div class="section">
-    <h2>Location</h2>
-    <p>We are happy to invite you to our wedding ceremony.</p>
-    <p>The church ceremony will be held at <strong>Saint Sargis Church</strong>.</p>
-    <img src="church.jpg" alt="Church photo">
+    <h2>Church</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/St_Hripsime_Church.jpg" alt="St Hripsime Church">
+    <p>St Hripsime Church, Ejmiatsin, Armenia</p>
+    <iframe
+      class="maps-embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.0510239830635!2d44.29659041501225!3d40.17278037939462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406a7eb12f2419a7%3A0x10a7fae3c3e4b03f!2sSt%20Hripsime%20Church%2C%20Vagharshapat%2C%20Armenia!5e0!3m2!1sen!2sus!4v1696528900000" 
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
   </div>
 
+  <!-- Hall Section -->
   <div class="section">
-    <h2>Celebration</h2>
-    <p>After the church ceremony, join us for the wedding reception at <strong>Your Wedding Hall</strong>.</p>
-    <img src="hall.jpg" alt="Wedding Hall photo">
+    <h2>Reception Hall</h2>
+    <img src="https://via.placeholder.com/800x400?text=Morena+Hall" alt="Morena Hall">
+    <p>Morena Hall, Masis, Armenia</p>
+    <iframe
+      class="maps-embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3014.569118774864!2d44.44150741502405!3d39.98259497944151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406ab1e8f03d9aab%3A0xd7812fc1c4f4a8e7!2sMorena%20Restaurant%20Complex%2C%20Masis%2C%20Armenia!5e0!3m2!1sen!2sus!4v1696529000000"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
   </div>
 
-  <!-- MUSIC -->
+  <!-- Music -->
   <audio id="bg-music" loop autoplay>
-    <source src="music.mp3" type="audio/mpeg">
+    <source src="your-music-file.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-
   <div class="music-control" onclick="toggleMusic()">
     <img id="music-icon" src="https://img.icons8.com/ios-filled/50/000000/mute.png" alt="Music control">
   </div>
