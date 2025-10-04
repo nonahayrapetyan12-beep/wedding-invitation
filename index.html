@@ -32,17 +32,19 @@
   z-index: 0;
 }
 
-/* Smooth gradient fade into main content */
 .header-section::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 120px; /* controls fade depth */
-  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(200,200,200,0.15));
+  height: 80px; /* adjust softness */
+  background: inherit; /* take the same bg image */
+  filter: blur(12px);
+  transform: scaleY(-1);
   z-index: 1;
 }
+
 
     .header-section .countdown-container,
     .header-section .names,
