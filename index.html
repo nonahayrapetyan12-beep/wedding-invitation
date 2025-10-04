@@ -15,10 +15,10 @@
 
     /* Header Section with bg image */
     .header-section {
-      background: url('bg2.jpg') no-repeat center center;
+      background: url('ring.jpg') no-repeat center center;
       background-size: cover;
       position: relative;
-      padding: 60px 20px;
+      padding: 60px 20px 40px; /* extra bottom padding for date */
       color: #d6e0b8;
     }
     .header-section::before {
@@ -30,7 +30,8 @@
       z-index: 0;
     }
     .header-section .countdown-container,
-    .header-section .names {
+    .header-section .names,
+    .header-section .wedding-date {
       position: relative;  /* above overlay */
       z-index: 1;
     }
@@ -56,10 +57,20 @@
     .names {
       font-family: 'Great Vibes', cursive;
       font-size: 100px;
-      margin: 30px 0;
+      margin: 30px 0 10px;
       line-height: 1.0;
       text-shadow: 3px 3px 8px rgba(0,0,0,0.2);
       color: #556B2F; /* dark olive green */
+    }
+
+    /* Wedding Date */
+    .wedding-date {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 36px;
+      font-weight: 600;
+      color: rgba(214, 224, 184, 0.95); /* soft light olive */
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+      margin-top: 0;
     }
 
     /* Main content with different background */
@@ -204,13 +215,16 @@
 
   <div class="sketches"></div>
 
-  <!-- Header + Countdown -->
+  <!-- Header + Countdown + Wedding Date -->
   <div class="header-section">
     <div class="countdown-container">
       <div>⏳ Time until our big day:</div>
       <div id="countdown" class="countdown"></div>
     </div>
+
     <div class="names">Babken ♡ Nona</div>
+
+    <div class="wedding-date">02/11/2025</div>
   </div>
 
   <!-- Main content -->
