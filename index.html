@@ -8,20 +8,31 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: url('bg2.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #4a3f2f;
+      color: #4a3f2f; /* readable body text */
       text-align: center;
       line-height: 1.6;
-      position: relative;
     }
-    body::before {
+
+    /* Header Section with bg image */
+    .header-section {
+      background: url('bg2.jpg') no-repeat center center;
+      background-size: cover;
+      position: relative;
+      padding: 60px 20px;
+      color: #d6e0b8;
+    }
+    .header-section::before {
       content: "";
-      position: fixed;
+      position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(249,246,240,0.6);
-      z-index: -1;
+      background: rgba(249,246,240,0.6); /* overlay for readability */
+      z-index: 0;
+    }
+    .header-section .countdown-container,
+    .header-section .names {
+      position: relative;  /* above overlay */
+      z-index: 1;
     }
 
     /* Countdown */
@@ -48,7 +59,13 @@
       margin: 30px 0;
       line-height: 1.0;
       text-shadow: 3px 3px 8px rgba(0,0,0,0.2);
-      color: #556B2F;
+      color: #556B2F; /* dark olive green */
+    }
+
+    /* Main content with different background */
+    .main-content {
+      background: #f9f6f0; /* light cream */
+      padding: 60px 20px;
     }
 
     /* Calendar */
@@ -60,6 +77,7 @@
       font-size: 26px;
       font-weight: 600;
       margin-bottom: 10px;
+      color: #7a884f; /* soft olive green */
     }
     table {
       width: 100%;
@@ -69,7 +87,7 @@
     }
     th, td {
       width: 14.28%;
-      padding: 10px 0;
+      padding: 5px 0;
       text-align: center;
       font-size: 18px;
       position: relative;
@@ -77,45 +95,34 @@
     th {
       font-weight: 600;
     }
-    td {
-      width: 14.28%;
-      padding: 5px 0;         /* reduce padding if too large */
-      text-align: center;
-      vertical-align: middle; /* align content vertically */
-    }
-
 
     /* Pulsating red heart */
-.highlight-heart {
-  display: flex;             /* center content */
-  justify-content: center;   /* horizontal center */
-  align-items: center;       /* vertical center */
-  position: relative;
-  width: 100%;
-  height: 100%;
-  vertical-align: middle;    /* important for table alignment */
-  animation: pulse 1.5s infinite;
-}
-
-.highlight-heart:before {
-  content: "❤";
-  font-size: 40px;           /* adjust size to fit number */
-  color: rgba(255, 0, 0, 0.5);
-  position: absolute;        /* behind the number */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-}
-
-.highlight-heart span {
-  position: relative;
-  z-index: 1;
-  font-weight: 600;
-  font-size: 18px;
-}
-
-
+    .highlight-heart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+      animation: pulse 1.5s infinite;
+    }
+    .highlight-heart:before {
+      content: "❤";
+      font-size: 40px;
+      color: rgba(201,79,79,0.6); /* warm red */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+    .highlight-heart span {
+      position: relative;
+      z-index: 1;
+      font-weight: 600;
+      font-size: 18px;
+    }
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.2); }
@@ -132,10 +139,12 @@
       font-family: 'Great Vibes', cursive;
       font-size: 42px;
       margin-bottom: 20px;
+      color: #556B2F; /* dark olive green */
     }
     .section p {
       font-size: 18px;
       margin: 10px 0;
+      color: #4a3f2f; /* readable body text */
     }
     .section img {
       margin-top: 20px;
@@ -152,7 +161,7 @@
       font-size: 16px;
       font-weight: 600;
       color: #fff;
-      background-color:  #556B2F;
+      background-color: #556B2F; /* dark olive green */
       border: none;
       border-radius: 8px;
       cursor: pointer;
@@ -160,7 +169,7 @@
       transition: background 0.3s;
     }
     .map-button:hover {
-      background-color: #8a2f2f;
+      background-color: #8a2f2f; /* warm red accent */
     }
 
     /* Music Control */
@@ -178,7 +187,7 @@
       width: 28px; height: 28px;
     }
 
-    /* Optional floral sketches overlay */
+    /* Optional floral sketches overlay for main content */
     .sketches {
       position: fixed;
       top: 0; left: 0;
@@ -195,62 +204,65 @@
 
   <div class="sketches"></div>
 
-  <!-- Countdown -->
-  <div class="countdown-container">
-    <div>⏳ Time until our big day:</div>
-    <div id="countdown" class="countdown"></div>
+  <!-- Header + Countdown -->
+  <div class="header-section">
+    <div class="countdown-container">
+      <div>⏳ Time until our big day:</div>
+      <div id="countdown" class="countdown"></div>
+    </div>
+    <div class="names">Babken ♡ Nona</div>
   </div>
 
-  <!-- Header Names -->
-  <div class="names">Babken ♡ Nona</div>
+  <!-- Main content -->
+  <div class="main-content">
+    <!-- Calendar -->
+    <div class="calendar">
+      <h2>November 2025</h2>
+      <table>
+        <tr>
+          <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
+        </tr>
+        <tr>
+          <td></td><td></td><td></td><td></td><td></td><td>1</td>
+          <td class="highlight-heart"><span>2</span></td>
+        </tr>
+        <tr>
+          <td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+        </tr>
+        <tr>
+          <td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+        </tr>
+        <tr>
+          <td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+        </tr>
+        <tr>
+          <td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+        </tr>
+      </table>
+    </div>
 
-  <!-- Calendar -->
-  <div class="calendar">
-    <h2>November 2025</h2>
-    <table>
-      <tr>
-        <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
-      </tr>
-      <tr>
-        <td></td><td></td><td></td><td></td><td></td><td>1</td>
-        <td class="highlight-heart"><span>2</span></td>
-      </tr>
-      <tr>
-        <td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
-      </tr>
-      <tr>
-        <td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
-      </tr>
-      <tr>
-        <td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
-      </tr>
-      <tr>
-        <td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
-      </tr>
-    </table>
-  </div>
+    <!-- Invitation Section -->
+    <div class="section">
+      <h2>Invitation</h2>
+      <p>You are cordially invited to celebrate the wedding of Babken and Nona.<br>
+      Join us for a day full of love, laughter, and cherished memories.</p>
+    </div>
 
-  <!-- Invitation Section -->
-  <div class="section">
-    <h2>Invitation</h2>
-    <p>You are cordially invited to celebrate the wedding of Babken and Nona.<br>
-    Join us for a day full of love, laughter, and cherished memories.</p>
-  </div>
+    <!-- Church Section -->
+    <div class="section">
+      <h2>Church</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/St_Hripsime_Church.jpg" alt="St Hripsime Church">
+      <p>St Hripsime Church, Ejmiatsin, Armenia</p>
+      <a href="https://goo.gl/maps/7tJZ7XnS7XcJw6tU8" target="_blank" class="map-button">Open Church in Maps</a>
+    </div>
 
-  <!-- Church Section -->
-  <div class="section">
-    <h2>Church</h2>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/St_Hripsime_Church.jpg" alt="St Hripsime Church">
-    <p>St Hripsime Church, Ejmiatsin, Armenia</p>
-    <a href="https://goo.gl/maps/7tJZ7XnS7XcJw6tU8" target="_blank" class="map-button">Open Church in Maps</a>
-  </div>
-
-  <!-- Hall Section -->
-  <div class="section">
-    <h2>Reception Hall</h2>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Morena_Hall_Masis_Armenia.jpg" alt="Morena Hall">
-    <p>Morena Hall, Masis, Armenia</p>
-    <a href="https://goo.gl/maps/6X1vM9hZs5vL1Zn88" target="_blank" class="map-button">Open Hall in Maps</a>
+    <!-- Hall Section -->
+    <div class="section">
+      <h2>Reception Hall</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Morena_Hall_Masis_Armenia.jpg" alt="Morena Hall">
+      <p>Morena Hall, Masis, Armenia</p>
+      <a href="https://goo.gl/maps/6X1vM9hZs5vL1Zn88" target="_blank" class="map-button">Open Hall in Maps</a>
+    </div>
   </div>
 
   <!-- Music -->
